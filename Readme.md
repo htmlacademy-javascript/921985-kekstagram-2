@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
-* Студент: [Dmitry Larionov](https://up.htmlacademy.ru/javascript-individual/2/user/921985).
-* Наставник: `Неизвестно`.
+- Студент: [Dmitry Larionov](https://up.htmlacademy.ru/javascript-individual/2/user/921985).
+- Наставник: [Сигов Никита](https://htmlacademy.ru/profile/crazer).
 
 ---
 
