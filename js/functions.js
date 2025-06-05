@@ -1,7 +1,7 @@
 function checkStringLength (string, length) {
   return string.length <= length;
 }
-
+checkStringLength('dsddad', 10);
 
 function checkPolindrom (string) {
   string = string.toLowerCase();
@@ -12,6 +12,7 @@ function checkPolindrom (string) {
   }
   return string === emptyString;
 }
+checkPolindrom('vfv');
 
 function getNumbers (string) {
   string = string.toString();
@@ -23,4 +24,4 @@ function getNumbers (string) {
   }
   return numbers;
 }
-
+getNumbers('dsdasd111');
