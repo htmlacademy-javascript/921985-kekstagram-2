@@ -26,24 +26,20 @@ const getRandomNumber = (min, max) => {
 
 const getRandomElementArray = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
-const createComment = () => {
-  return {
-    id: getRandomNumber(0, 999),
-    avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
-    message: `${getRandomElementArray(MESSAGES)}`,
-    name: `${getRandomElementArray(NAMES)}`
-  };
-};
+const createComment = () => ({
+  id: getRandomNumber(0, 999),
+  avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
+  message: `${getRandomElementArray(MESSAGES)}`,
+  name: `${getRandomElementArray(NAMES)}`
+});
 
-const createObject = () => {
-  return {
-    id: getRandomNumber(1, 25),
-    url: `photos/${getRandomNumber(1, 25)}.jpg`,
-    description: `Описание фотографии №${getRandomNumber(1, 25)}`,
-    likes: getRandomNumber(15, 200),
-    comments: Array.from({length: getRandomNumber(0, 30)}, createComment)
-  };
-};
+const createObject = () => ({
+  id: getRandomNumber(1, 25),
+  url: `photos/${getRandomNumber(1, 25)}.jpg`,
+  description: `Описание фотографии №${getRandomNumber(1, 25)}`,
+  likes: getRandomNumber(15, 200),
+  comments: Array.from({length: getRandomNumber(0, 30)}, createComment)
+});
 
 const objectArray = Array.from({length: 25}, createObject);
 
