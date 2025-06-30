@@ -1,3 +1,4 @@
+import { getRandomNumber, getRandomElementArray } from './util.js';
 
 const MESSAGES = [
   'Всё отлично!',
@@ -19,22 +20,37 @@ const NAMES = [
   'Сабрина'
 ];
 
-const minId = 0;
-const maxId = 999;
+const MINID = 0;
+const MAXID = 999;
 
-const minAvatar = 1;
-const maxAvatar = 6;
+const MINAVATAR = 1;
+const MAXAVATAR = 6;
 
-const minPhoto = 1;
-const maxPhoto = 25;
+const MINPHOTO = 1;
+const MAXPHOTO = 25;
 
-const minDescription = 1;
-const maxDescription = 25;
+const MINDESCRIPTION = 1;
+const MAXDESCRIPTION = 25;
 
-const minLike = 15;
-const maxLike = 300;
+const MINLIKE = 15;
+const MAXLIKE = 300;
 
-const minComment = 0;
-const maxComment = 30;
+const MINCOMMENT = 0;
+const MAXCOMMENT = 30;
 
-export {MESSAGES, NAMES, minId, maxId, minAvatar, maxAvatar, minPhoto, maxPhoto, minDescription, maxDescription, minLike, maxLike, minComment, maxComment};
+const createCommentPhoto = () => ({
+  id: getRandomNumber(MINID, MAXID),
+  avatar: `img/avatar-${getRandomNumber(MINAVATAR, MAXAVATAR)}.svg`,
+  message: `${getRandomElementArray(MESSAGES)}`,
+  name: `${getRandomElementArray(NAMES)}`
+});
+
+const createDescriptionPhoto = (element, index) => ({
+  id: index + 1,
+  url: `photos/${getRandomNumber(MINPHOTO, MAXPHOTO)}.jpg`,
+  description: `Описание фотографии №${getRandomNumber(MINDESCRIPTION, MAXDESCRIPTION)}`,
+  likes: getRandomNumber(MINLIKE, MAXLIKE),
+  comments: Array.from({length: getRandomNumber(MINCOMMENT, MAXCOMMENT)}, createCommentPhoto)
+});
+
+export {MESSAGES, NAMES, createDescriptionPhoto};
